@@ -11,6 +11,25 @@
   <link rel="manifest" href="manifest.webmanifest">
   <script async src="main.js"></script>
 
+  <style>
+    #pwa-install-prompt {
+        display: none;
+        position: absolute;
+        top: 100%;
+        padding: 15px;
+        background: #c19898;
+        border-radius: 10px;
+        left: 50%;
+        transform: translate(-50%,-110%);
+    }
+    #pwa-install-prompt.show {
+        display: block;
+    }
+    .prompt-buttons {
+        display: flex;
+    }
+</style>
+
 
 </head>
 <body>
@@ -23,5 +42,15 @@
           .catch(console.error);
   }
 </script>
+
+<div id="pwa-install-prompt">
+  <strong>Install App</strong>
+  <p>Install this App as a PWA!</p>
+  <div class="prompt-buttons">
+    <button data-id="pwa-install-y">Yes</button>
+    <button data-id="pwa-install-n">No</button>
+  </div>
+</div>
+
 </body>
 </html>
